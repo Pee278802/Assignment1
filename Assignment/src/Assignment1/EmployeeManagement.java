@@ -5,17 +5,40 @@ import java.util.Scanner;
 public class EmployeeManagement {
 	Scanner input = new Scanner(System.in);
 	protected String employeeName, email, position, username, password, newPassword, comfirmPassword;
-	protected int age, TAC;
+	protected int age, TAC, option;
 	protected long contactNo, IC;
 	protected double salary;
 	private String confirmPassword;
 	
-	public static void main(String[] args) {
-	EmployeeManagement a = new EmployeeManagement();
+	public void EmployeeManagementSystem() {
+		System.out.println("-----------------EMPLOYEE MANAGEMENT SYSTEM---------------------");
+		System.out.println("Option 1\t\t" + ":Add New Employee");
+		System.out.println("Option 2\t\t" + ":Employee Login");
+		System.out.println("Option 3\t\t" + ":Forgot Password");
+		System.out.println("Option 4\t\t" + ":Delete Employee");
+		System.out.print("Select Option\t\t:");
+		option = input.nextInt();
+		switch (option) {
+			case 1:
+				AddEmployee();
+				printDetail();
+				break;
+			
+			case 2:
+				Login();
+				break;
+			
+			case 3:
+				forgetPassword(13579);
+				break;
+				
+			case 4:
+				deleteEmployee();
+		}
 	//a.AddEmployee();
 	//a.printDetail();
-	a.forgetPassword(13579);
-	a.deleteEmployee();
+	//a.forgetPassword(13579);
+	//a.deleteEmployee();
 	
 	}
 		public void AddEmployee() {
@@ -33,8 +56,10 @@ public class EmployeeManagement {
 		System.out.println("The new employee has been successfully added. ");
 		return;
 		}
-		public void Login(String username, String password) {
+		public void Login() {
+			System.out.print("Username\t\t:");
 			this.username = input.next();
+			System.out.print("Password\t\t:");
 			this.password = input.next();
 				if(this.username.equals(username) && password.equals(password)) {
 					System.out.println("Login Successful.");
@@ -88,6 +113,10 @@ public class EmployeeManagement {
 			this.contactNo = input.nextLong();
 			this.position = input.next();
 			this.salary = input.nextDouble();
+			
+			printDetail();
+			
+			System.out.println("The employee has been deleted.");
 			
 		}
 }

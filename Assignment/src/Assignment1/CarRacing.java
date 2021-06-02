@@ -11,9 +11,9 @@ public class CarRacing {
 	}
 	
 	public void printDetilOfCompany() {
-		System.out.println("Name:\t" + this.name);
-		System.out.println("Location:\t" + this.location);
-		System.out.println("Requirement:\t" + this.requirement);
-		System.out.println("Business Hours:\t" + this.businessHours);
+		System.out.println("Name:\t" + name);
+		System.out.println("Location:\t" + location);
+		System.out.println("Requirement:\t" + requirement);
+		System.out.println("Business Hours:\t" + businessHours);
 	}
 }
