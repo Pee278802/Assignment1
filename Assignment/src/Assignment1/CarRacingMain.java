@@ -11,17 +11,19 @@ public class CarRacingMain {
 		Scanner input = new Scanner(System.in);	
 		
 		CarRacing RacingCarCompany = new CarRacing();
-		RacingCarCompany.detailOfCompany("Pro MotorSport Enterprise", "Alor Setar, Kedah", "1.\tPossess a NATION COMPETITION LICENSE\n2.\tGood Healt Situation", "12p.m.-10p.m. Everyday");
+		RacingCarCompany.detailOfCompany("Pro MotorSport Enterprise", "Alor Setar, Kedah", "1.\tPossess a NATION COMPETITION LICENSE\n\t\t 2.\tGood Healt Situation", "12p.m.-10p.m. Everyday");
+		RacingCarCompany.printDetailOfCompany();
 		typeOfRacing a = new typeOfRacing();
 		a.typeOfRacing();
 		
 		do {
-			System.out.println("Login as Admin / Customer: " );
+			System.out.println("\nAdmin / Customer: " );
 			login = input.next();
 
 			switch(login) {
 				case "Admin":
 				do {
+				System.out.println("1\tEmployee Management\n2\tAdvertisementAndMarketing\n3\tFinance\n4\tProvided Car");
 				System.out.print("Option:\t");
 				adminOptions = input.nextInt();
 				switch (adminOptions) {
@@ -42,24 +44,21 @@ public class CarRacingMain {
 						Car1.providedCar();
 						break;
 					case 0:
+						System.out.println("Back to the main menu.");
 						break;
 					default:
-						System.out.println("Invalid choice. Try again.\n");
+						System.out.println("Invalid choice. Please Try again\n");
 						break;
 					}
-				}while(adminOptions == 0);
-					
+				}while(adminOptions != 1 && adminOptions != 2 && adminOptions != 3 && adminOptions != 4 && adminOptions != 0);
+					break;
+				
 				case "Customer":
 					Customer client1 = new Customer();
 					client1.Customer();
 					break;
-				
-				case "Back":
-					System.out.println("Back to the main menu");
-					break;
-			}
-		}while(login == "Back");
-
+			} return;
+		}while(adminOptions == 0);
 
 	}
 }

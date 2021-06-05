@@ -8,7 +8,7 @@ public class EmployeeManagement {
 	protected int age, TAC, option;
 	protected long contactNo, IC;
 	protected double salary;
-	private String confirmPassword;
+	protected String confirmPassword;
 	
 	public void EmployeeManagementSystem() {
 		System.out.println("-----------------EMPLOYEE MANAGEMENT SYSTEM---------------------");
@@ -57,6 +57,7 @@ public class EmployeeManagement {
 		return;
 		}
 		public void Login() {
+			System.out.println("-------------------Employee Login---------------");
 			System.out.print("Username\t\t:");
 			this.username = input.next();
 			System.out.print("Password\t\t:");
@@ -75,48 +76,53 @@ public class EmployeeManagement {
 			System.out.print("TAC \t: ");
 			this.TAC = input.nextInt();
 				if (this.TAC == TAC) {
-					while (this.TAC == TAC) {
-						System.out.println("Enter a new password: \t");
+					do {
+						System.out.print("Enter a new password: \t");
 						this.newPassword = input.next();
-						System.out.println("Comfirm password: \t");
+						System.out.print("Comfirm password: \t");
 						this.confirmPassword = input.next();
-					
-						if (this.confirmPassword == this.newPassword || this.newPassword == this.comfirmPassword) {
+						if (this.confirmPassword.equals(newPassword) && this.newPassword.equals(confirmPassword)) {
 							System.out.println("New password has been updated");
-						} else
-							System.out.println("Please try again!");
-			TAC++;
-				} 
-			}else 
-				do{
-					System.out.println("The TAC is incorrect, please try again!");
-					System.out.print("TAC \t: ");
-					this.TAC = input.nextInt();
-					if(this.TAC == TAC) {
-						System.out.println("Enter a new password: \t");
-						this.newPassword = input.next();
-						System.out.println("Comfirm password: \t");
-						this.confirmPassword = input.next();
-					
-						if (this.confirmPassword == this.newPassword && this.newPassword == this.confirmPassword) {
-							System.out.println("New password has been updated");
-						} else
-							System.out.println("Please try again!");
-			TAC++;
-					}
-				} while(this.TAC!=TAC);
+						} else {
+							System.out.println("Inconsistent passwords. Please try again!");
+						}
+					}while(!(this.confirmPassword.equals(newPassword) && this.newPassword.equals(confirmPassword)));
+				
+				
+				}else 
+					do{
+						System.out.println("The TAC is incorrect, please try again!");
+						System.out.print("TAC \t: ");
+						this.TAC = input.nextInt();
+						if(this.TAC == TAC) {
+							System.out.print("Enter a new password: \t");
+							this.newPassword = input.next();
+							System.out.print("Comfirm password: \t");
+							this.confirmPassword = input.next();
+						
+							if (this.confirmPassword.equals(newPassword) && this.newPassword.equals(confirmPassword)) {
+								System.out.println("New password has been updated");
+							} else
+								System.out.println("Inconsistent passwords. Please try again!");
+						} 
+					}while(this.TAC != TAC);
 		}
-	
 		public void deleteEmployee() {
+			System.out.println("-------------------Delete Employee---------------");
+			System.out.print("Enter the name: ");
 			this.employeeName = input.next();
+			System.out.print("Enter age: ");
 			this.age = input.nextInt();
+			System.out.print("Enter contact no: ");
 			this.contactNo = input.nextLong();
+			System.out.print("Enter position: ");
 			this.position = input.next();
+			System.out.print("Enter salary: ");
 			this.salary = input.nextDouble();
 			
 			printDetail();
 			
-			System.out.println("The employee has been deleted.");
+			System.out.println("\nThe employee has been deleted.");
 			
 		}
 }

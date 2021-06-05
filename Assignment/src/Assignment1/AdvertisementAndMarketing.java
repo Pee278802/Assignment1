@@ -1,16 +1,14 @@
 package Assignment1;
 import java.util.Scanner;
 public class AdvertisementAndMarketing {
-	public static void main(String[] args) {
-	
-	}
 	
 	Scanner input = new Scanner(System.in);
 	String method1, method2, method3, offlineAdvertisement, celebritySpokeman;
 	int Options;
 	
 	public void AdvertisementOptions(){
-		System.out.println("Option: ");
+		System.out.println("\n1\t Online Advertisement\n2\t Offline Advertisment\n3\t Spokeman");
+		System.out.println("Method: ");
 		Options = input.nextInt();
 		switch(Options) {
 			case 1:
@@ -26,6 +24,7 @@ public class AdvertisementAndMarketing {
 			case 3:
 				System.out.println("Method 3 :" );
 				System.out.println(method3("Vin Diesel", 1));
+				System.out.println(method3("Kris Wu", 2));
 			break;
 				
 		}
@@ -38,7 +37,7 @@ public class AdvertisementAndMarketing {
 		return offlineAdvertisement;
 	}
 	public String method3(String celebritySpokeman, int Spokeman) {
-		return Spokeman + ". " +celebritySpokeman;
+		return Spokeman + ".\t" +celebritySpokeman;
 	}
 }
 
