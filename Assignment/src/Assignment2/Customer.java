@@ -2,13 +2,14 @@ package Assignment2;
 
 import java.util.Scanner;
 
-public class Customer {
+public class Customer extends CarRacing{
 	
 	Scanner input = new Scanner(System.in);	
 	protected String name, email, typeOfRacing, payFee, Customer;
 	protected long icNo, contactNo;
 	
 	public void Customer() {
+		printDetailOfCompany();
 		System.out.print("Contestant/Audience:\t");
 		this.Customer = input.next();
 		if (Customer == "Contestant" || Customer == "contestant") {

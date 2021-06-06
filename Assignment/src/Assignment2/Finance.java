@@ -1,6 +1,6 @@
 package Assignment2;
 
-class Finance extends AdvertisementAndMarketing implements Expenses{
+class Finance extends AdvertisementAndMarketing implements Payment{
 
 	protected double businessLicense, salary, Insurance, maintenance, prize;
 	protected double entryFee , ticketFee, Sponsorship; 
@@ -29,6 +29,9 @@ class Finance extends AdvertisementAndMarketing implements Expenses{
 		return totalRevenue() - totalExpense();
 	}
 	
+	public double payment() {
+		return this.ticketFee + this.entryFee;
+	}
 	
 	public void FinancialSatement() {
 		System.out.println("\n-----------------------FINANCIAL STATEMENT---------------------");

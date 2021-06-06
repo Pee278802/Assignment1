@@ -9,10 +9,9 @@ public class CarRacingMain {
 		int adminOptions;
 		
 		Scanner input = new Scanner(System.in);	
-		
 		CarRacing RacingCarCompany = new CarRacing();
 		RacingCarCompany.detailOfCompany("Pro MotorSport Enterprise", "Alor Setar, Kedah", "1.\tPossess a NATION COMPETITION LICENSE\n\t\t 2.\tGood Healt Situation", "12p.m.-10p.m. Everyday");
-		RacingCarCompany.printDetailOfCompany();
+		RacingCarCompany.printDetail();
 
 		do {
 			System.out.println("\nAdmin / Customer: " );
