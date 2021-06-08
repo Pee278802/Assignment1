@@ -7,7 +7,6 @@ public class CarRacingMain {
 	
 	public static void main(String[] args) {
 		Login();
-		
 	}
 	
 	public static void Login(){
@@ -27,10 +26,11 @@ public class CarRacingMain {
 			switch(login) {
 			case "Admin":
 			do {
-			System.out.println("1\tEmployee Management\n2\tAdvertisementAndMarketing\n3\tFinance\n4\tProvided Car");
+			System.out.println("\n\n1\tEmployee Management\n2\tAdvertisementAndMarketing\n3\tFinance\n4\tProvided Car\n5\tBack To Login\n0\tExit");
 			System.out.print("Option:\t");
 			adminOptions = input.nextInt();
 			switch (adminOptions) {
+
 				case 1:
 					EmployeeManagement employee1 = new EmployeeManagement();
 					employee1.EmployeeManagementSystem();
@@ -47,19 +47,24 @@ public class CarRacingMain {
 					providedCar Car1 = new providedCar();
 					Car1.providedCar();
 					break;
-				case 0:
+				case 5:
 					Login();
+					break;
+				case 0:
+					System.out.println("\n\n=== Have a  Good Days!===");
+					System.exit(0);
 				default:
 					System.out.println("Invalid choice. Please Try again\n");
 					break;
 				}
-			}while(adminOptions != 1 || adminOptions != 2 || adminOptions != 3 || adminOptions != 4 || adminOptions != 0);
+			}while(adminOptions != 1 && adminOptions != 2 || adminOptions != 3 || adminOptions != 4 || adminOptions != 0);
 				break;
 			
 			case "Customer":
 				Customer client1 = new Customer();
 				client1.Customer();
 				break;
+				
 		} return;
 			
 		}while(adminOptions == 0);
